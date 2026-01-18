@@ -1,0 +1,10 @@
+{
+    "name": "VitalShift",
+    "version_number": "1.0.0",
+    "website_url": "https://github.com/MJorink/VitalShift",
+    "description": "Change avatar based on health, allows for visual damage to player.",
+    "dependencies": [
+        "bonelib-BoneLib-3.2.0",
+        "LavaGang-MelonLoader-0.6.5"
+    ]
+}
