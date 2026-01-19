@@ -34,18 +34,15 @@ namespace VitalShift {
         }
 
         public override void OnUpdate() {
+            base.OnUpdate();
             Immortal();
         }
     
         private void Immortal() {
             if (!ImmortalEntry.Value) return;
-            if (Time.time < lastcheck + 1f) return;
-            lastcheck = Time.time;
 
-            MelonLogger.Msg("Health: " + Player.RigManager.health.curr_Health);
-
-            if (Player.RigManager.health.curr_Health <= 10f) {
-                Player.RigManager.health.curr_Health = 20f;
+            if (Player.RigManager.health.curr_Health <= 1f) {
+                Player.RigManager.health.curr_Health = 1.2f;
             }
         }  
     }
