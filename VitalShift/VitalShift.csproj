@@ -21,6 +21,9 @@
 		<Reference Include="BoneLib">
 		  <HintPath>$(VSLibsDir)\Mods\BoneLib.dll</HintPath>
 		</Reference>
+		<Reference Include="LabFusion">
+		  <HintPath>$(VSLibsDir)\Mods\LabFusion.dll</HintPath>
+		</Reference>
 		<Reference Include="Il2CppGoogle.Protobuf">
 			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppGoogle.Protobuf.dll</HintPath>
 		</Reference>
@@ -522,8 +525,6 @@
 
 	<ItemGroup>
 		<Compile Include="Setup.cs" />
-		<Compile Include="Presets.cs" />
-		<Compile Include="SetGraphics.cs" />
 		<Compile Include="Variables.cs" />
 	</ItemGroup>
 
