@@ -16,26 +16,24 @@ namespace VitalShift {
         private void SetupBoneMenu() {
             BoneLib.BoneMenu.Page defaultPage = BoneLib.BoneMenu.Page.Root.CreatePage("VitalShift", Color.yellow);
 
-            defaultPage.CreateBool("Immortal", Color.green, ImmortalEntry.Value, (a) => { ImmortalEntry.Value = a; });            
+            defaultPage.CreateBool("Immortal", Color.yellow, ImmortalEntry.Value, (a) => { ImmortalEntry.Value = a; });
+            defaultPage.CreateFloat("Ragdoll Duration", Color.yellow, RagdollDurationEntry.Value, 1f, 1f, 10f, (a) => { RagdollDurationEntry.Value = a;});
             defaultPage.CreateFunction("Save Settings", Color.cyan, () => { MelonPreferences.Save(); });                   
         }
 
         private void SetupMelonPreferences() {
             category = MelonPreferences.CreateCategory("VitalShift");
             ImmortalEntry = category.CreateEntry("Immortal", false);
+            RagdollDurationEntry = category.CreateEntry("Ragdoll Duration", 5f)
             MelonPreferences.Save();
             category.SaveToFile();
         }
-
-        //public override void OnSceneWasLoaded(int buildIndex, string sceneName) {
-        //    base.OnSceneWasLoaded(buildIndex, sceneName);
-        //
-        //}
 
         public override void OnUpdate() {
             base.OnUpdate();
             Immortal();
             RespawnHeal();
+            Unragdoll();
         }
     
         private void Immortal() {
@@ -59,6 +57,23 @@ namespace VitalShift {
             if (Time.time - RespawnTime < 1f) return;
             Player.RigManager.health.curr_Health = 1.1f;
             NeedsHeal = false;
+            Ragdoll();
+        }
+
+        private static void Ragdoll() {
+            ragdolling = true;
+            ragdollstart = Time.time;
+            Player.PhysicsRig.ShutdownRig();
+            Player.PhysicsRig.RagdollRig(); 
+        }
+
+        private static void Unragdoll() {
+            if (!ragdolling) return;
+            if (Time.time - ragdollstart < RagdollDurationEntry.Value) {
+            Player.PhysicsRig.TurnOnRig();
+            Player.PhysicsRig.UnRagdollRig();
+            ragdolling = false;
+            }
         }
     }
 }
