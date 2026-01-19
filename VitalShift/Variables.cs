@@ -8,7 +8,8 @@ namespace VitalShift {
 
         MelonPreferences_Entry<bool> ImmortalEntry;
 
-        //private float lastcheck = 0f;
+        private bool NeedsHeal = false;
+        private float RespawnTime;
 
     }
 }
