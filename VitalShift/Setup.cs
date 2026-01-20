@@ -14,7 +14,7 @@ namespace VitalShift {
         }
 
         private void SetupBoneMenu() {
-            BoneLib.BoneMenu.Page defaultPage = BoneLib.BoneMenu.Page.Root.CreatePage("VitalShift", Color.yellow);
+            BoneLib.BoneMenu.Page defaultPage = BoneLib.BoneMenu.Page.Root.CreatePage("Jorink", Color.magenta).CreatePage("VitalShift", Color.red);
 
             defaultPage.CreateBool("Immortal", Color.yellow, ImmortalEntry.Value, (a) => { ImmortalEntry.Value = a; });
             defaultPage.CreateFloat("Ragdoll Duration", Color.yellow, RagdollDurationEntry.Value, 1f, 1f, 10f, (a) => { RagdollDurationEntry.Value = a;});
@@ -24,7 +24,7 @@ namespace VitalShift {
         private void SetupMelonPreferences() {
             category = MelonPreferences.CreateCategory("VitalShift");
             ImmortalEntry = category.CreateEntry("Immortal", false);
-            RagdollDurationEntry = category.CreateEntry("Ragdoll Duration", 5f)
+            RagdollDurationEntry = category.CreateEntry("Ragdoll Duration", 5f);
             MelonPreferences.Save();
             category.SaveToFile();
         }
@@ -34,46 +34,6 @@ namespace VitalShift {
             Immortal();
             RespawnHeal();
             Unragdoll();
-        }
-    
-        private void Immortal() {
-            if (!ImmortalEntry.Value) return;
-            if (Player.RigManager == null) return;
-            
-            if (Player.RigManager.health.curr_Health <= 1f) {
-                if (Player.RigManager.health.curr_Health <= 0f) {
-                Player.RigManager.health.Respawn();
-                NeedsHeal = true;
-                RespawnTime = Time.time;
-            }
-                else {
-                    Player.RigManager.health.curr_Health = 1.1f;
-                }
-            }
-        }
-    
-        private void RespawnHeal() {
-            if (!NeedsHeal) return;
-            if (Time.time - RespawnTime < 1f) return;
-            Player.RigManager.health.curr_Health = 1.1f;
-            NeedsHeal = false;
-            Ragdoll();
-        }
-
-        private static void Ragdoll() {
-            ragdolling = true;
-            ragdollstart = Time.time;
-            Player.PhysicsRig.ShutdownRig();
-            Player.PhysicsRig.RagdollRig(); 
-        }
-
-        private static void Unragdoll() {
-            if (!ragdolling) return;
-            if (Time.time - ragdollstart < RagdollDurationEntry.Value) {
-            Player.PhysicsRig.TurnOnRig();
-            Player.PhysicsRig.UnRagdollRig();
-            ragdolling = false;
-            }
         }
     }
 }
