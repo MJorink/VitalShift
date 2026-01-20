@@ -49,7 +49,7 @@ namespace VitalShift {
             RagdollingKnocked = true;
             RagdollKnockedStart = Time.time;
 
-            Player.RigManager.health.curr_Health = 1.0f;
+            Player.RigManager.health.curr_Health = MediumHealthThreshold / 2f;
             Player.PhysicsRig.RagdollRig(); 
             Player.PhysicsRig.DisableBallLoco();
             Player.PhysicsRig.PhysicalLegs();
@@ -99,6 +99,7 @@ namespace VitalShift {
             
             RagdollingKnocked = false;
             IsKnocked = false;
+            Player.RigManager.health.curr_Health = MediumHealthThreshold;
             }}
         }
     }

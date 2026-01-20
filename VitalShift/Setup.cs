@@ -2,6 +2,7 @@
 using BoneLib;
 using BoneLib.BoneMenu;
 using UnityEngine;
+using Il2CppSLZ.Marrow.Warehouse;
 
 [assembly: MelonInfo(typeof(VitalShift.Core), "VitalShift", "1.0.0", "jorink")]
 [assembly: MelonGame("Stress Level Zero", "BONELAB")]
@@ -17,31 +18,41 @@ namespace VitalShift {
         private void SetupBoneMenu() {
             Page defaultPage = Page.Root.CreatePage("Jorink", Color.magenta).CreatePage("VitalShift", Color.red);
 
-            defaultPage.CreateBool("Knocked", Color.yellow, KnockedEntry.Value, (a) => { KnockedEntry.Value = a; });
+            defaultPage.CreateBool("Enable Mod", Color.blue, EnableModEntry.Value, (a) => { EnableModEntry.Value = a; });
+            defaultPage.CreateBool("Knocked on Death", Color.cyan, KnockedEntry.Value, (a) => { KnockedEntry.Value = a; });
             defaultPage.CreateFloat("Knocked Duration", Color.yellow, KnockedDurationEntry.Value, 1f, 1f, 10f, (a) => { KnockedDurationEntry.Value = a;});
-            defaultPage.CreateFloat("Death Duration", Color.yellow, DeadDurationEntry.Value, 1f, 1f, 10f, (a) => { DeadDurationEntry.Value = a;});
+            defaultPage.CreateFloat("Death Duration", Color.red, DeadDurationEntry.Value, 1f, 1f, 10f, (a) => { DeadDurationEntry.Value = a;});
             defaultPage.CreateFunction("Set High HP Avatar", Color.green, () => { SetAvatarHigh(); });
-            defaultPage.CreateFunction("Set Medium HP Avatar", Color.green, () => { SetAvatarMedium(); });
-            defaultPage.CreateFunction("Set Low HP Avatar", Color.green, () => { SetAvatarLow(); });
-
+            defaultPage.CreateFunction("Set Medium HP Avatar", Color.yellow, () => { SetAvatarMedium(); });
+            defaultPage.CreateFunction("Set Low HP Avatar", Color.red, () => { SetAvatarLow(); });
             defaultPage.CreateFunction("Save Settings", Color.cyan, () => { MelonPreferences.Save(); });                   
         }
 
         private void SetupMelonPreferences() {
             category = MelonPreferences.CreateCategory("VitalShift");
-            KnockedEntry = category.CreateEntry("Knocked", false);
+            EnableModEntry = category.CreateEntry("Enable Mod", true);
+            KnockedEntry = category.CreateEntry("Knocked on Death", false);
             KnockedDurationEntry = category.CreateEntry("Knocked Duration", 5f);
             DeadDurationEntry = category.CreateEntry("Death Duration", 5f);
-            //Set to Ford by default
-            //SavedAvatarHigh = category.CreateEntry("Avatar High", "High");
-            //SavedAvatarMedium = category.CreateEntry("Avatar Medium", "Medium");
-            //SavedAvatarLow = category.CreateEntry("Avatar Low", "Low");
+
+            SavedAvatarHigh = category.CreateEntry("Avatar High", "SLZ.BONELAB.Content.Avatar.FordBW");
+            SavedAvatarMedium = category.CreateEntry("Avatar Medium", "SLZ.BONELAB.Content.Avatar.FordBW");
+            SavedAvatarLow = category.CreateEntry("Avatar Low", "SLZ.BONELAB.Content.Avatar.FordBW");
+
             MelonPreferences.Save();
             category.SaveToFile();
+        }
+        
+        public override void OnSceneWasLoaded(int buildIndex, string sceneName) {
+            base.OnSceneWasLoaded(buildIndex, sceneName);
+            AvatarHigh = new Barcode(SavedAvatarHigh.Value);
+            AvatarMedium = new Barcode(SavedAvatarMedium.Value);
+            AvatarLow = new Barcode(SavedAvatarLow.Value);
         }
 
         public override void OnUpdate() {
             base.OnUpdate();
+            if (!EnableModEntry.Value) return;
             Knocked();
             KnockedHandling();
             Unragdoll();

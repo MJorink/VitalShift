@@ -8,18 +8,19 @@ namespace VitalShift {
 
         MelonPreferences_Category category;
 
+        MelonPreferences_Entry<bool> EnableModEntry;
         MelonPreferences_Entry<bool> KnockedEntry;
         MelonPreferences_Entry<float> DeadDurationEntry;
         MelonPreferences_Entry<float> KnockedDurationEntry;
 
-        //MelonPreferences_Entry<string> SavedAvatarHigh;
-        //MelonPreferences_Entry<string> SavedAvatarMedium;
-        //MelonPreferences_Entry<string> SavedAvatarLow;
+        MelonPreferences_Entry<string> SavedAvatarHigh;
+        MelonPreferences_Entry<string> SavedAvatarMedium;
+        MelonPreferences_Entry<string> SavedAvatarLow;
 
-        //Set to Ford by default
         private Barcode AvatarHigh;
         private Barcode AvatarMedium;
         private Barcode AvatarLow;
+        private Barcode CurrentAvatarSet;
 
         private float HighHealthThreshold;
         private float MediumHealthThreshold;

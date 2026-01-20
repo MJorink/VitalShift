@@ -526,7 +526,7 @@
 	<ItemGroup>
 		<Compile Include="Setup.cs" />
 		<Compile Include="Variables.cs" />
-		<Compile Include="Knocked.cs" />
+		<Compile Include="Knocking.cs" />
 		<Compile Include="AvatarChange.cs" />
 	</ItemGroup>
 

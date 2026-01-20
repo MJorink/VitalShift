@@ -7,42 +7,51 @@ namespace VitalShift {
     public partial class Core : MelonMod {
 
         private void SetAvatar() {
+            if (Player.RigManager == null) return;
+            if (AvatarHigh.ID == null) return;
+            HighHealthThreshold = Player.RigManager.health.max_Health * 0.7f;
+            MediumHealthThreshold = Player.RigManager.health.max_Health * 0.2f;
 
-            HighHealthThreshold = Player.RigManager.health.max_Health * 0.8f;
-            MediumHealthThreshold = Player.RigManager.health.max_Health * 0.3f;
-
+            Barcode TargetAvatar = null;
             if (Player.RigManager.health.curr_Health >= HighHealthThreshold) {
-                MelonLogger.Msg("Setting Avatar to High HP Avatar: " + AvatarHigh);
-                //Player.RigManager.SwapAvatarCrate(AvatarHigh);
+                TargetAvatar = AvatarHigh;
             }
-
             else if (Player.RigManager.health.curr_Health >= MediumHealthThreshold) {
-                MelonLogger.Msg("Setting Avatar to Medium HP Avatar: " + AvatarMedium);
-                //Player.RigManager.SwapAvatarCrate(AvatarMedium);
+                TargetAvatar = AvatarMedium;
+            }
+            else {
+                TargetAvatar = AvatarLow;
             }
 
-            else {
-                MelonLogger.Msg("Setting Avatar to Low HP Avatar: " + AvatarLow);
-                //Player.RigManager.SwapAvatarCrate(AvatarLow);
+            if (CurrentAvatarSet != TargetAvatar) {
+                MelonLogger.Msg("Setting Avatar to: " + TargetAvatar.ID);
+                Player.RigManager.SwapAvatarCrate(TargetAvatar);
+                CurrentAvatarSet = TargetAvatar;
             }
         }
 
         private void SetAvatarHigh() {
+            if (Player.RigManager == null) return;
             AvatarHigh = Player.RigManager.AvatarCrate.Barcode;
-            MelonLogger.Msg("Set High HP Avatar to: " + AvatarHigh);
-            //SavedAvatarHigh.Value = AvatarHigh;
+            MelonLogger.Msg("Set High HP Avatar to: " + AvatarHigh.ID);
+            SavedAvatarHigh.Value = AvatarHigh.ToString();
+            MelonPreferences.Save();
         }
         
         private void SetAvatarMedium() {
+            if (Player.RigManager == null) return;
             AvatarMedium = Player.RigManager.AvatarCrate.Barcode;
-            MelonLogger.Msg("Set Medium HP Avatar to: " + AvatarMedium);
-            //SavedAvatarMedium.Value = AvatarMedium;
+            MelonLogger.Msg("Set Medium HP Avatar to: " + AvatarMedium.ID);
+            SavedAvatarMedium.Value = AvatarMedium.ToString();
+            MelonPreferences.Save();
         }
         
         private void SetAvatarLow() {
+            if (Player.RigManager == null) return;
             AvatarLow = Player.RigManager.AvatarCrate.Barcode;
-            MelonLogger.Msg("Set Low HP Avatar to: " + AvatarLow);
-            //SavedAvatarLow.Value = AvatarLow;
+            MelonLogger.Msg("Set Low HP Avatar to: " + AvatarLow.ID);
+            SavedAvatarLow.Value = AvatarLow.ToString();
+            MelonPreferences.Save();
         }
     }
 }
