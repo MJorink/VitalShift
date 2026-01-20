@@ -1,5 +1,6 @@
 ﻿using MelonLoader;
 using BoneLib;
+using BoneLib.BoneMenu;
 using UnityEngine;
 
 [assembly: MelonInfo(typeof(VitalShift.Core), "VitalShift", "1.0.0", "jorink")]
@@ -14,7 +15,7 @@ namespace VitalShift {
         }
 
         private void SetupBoneMenu() {
-            BoneLib.BoneMenu.Page defaultPage = BoneLib.BoneMenu.Page.Root.CreatePage("Jorink", Color.magenta).CreatePage("VitalShift", Color.red);
+            Page defaultPage = Page.Root.CreatePage("Jorink", Color.magenta).CreatePage("VitalShift", Color.red);
 
             defaultPage.CreateBool("Immortal", Color.yellow, ImmortalEntry.Value, (a) => { ImmortalEntry.Value = a; });
             defaultPage.CreateFloat("Ragdoll Duration", Color.yellow, RagdollDurationEntry.Value, 1f, 1f, 10f, (a) => { RagdollDurationEntry.Value = a;});

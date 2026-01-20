@@ -10,9 +10,9 @@ namespace VitalShift {
             
             if (Player.RigManager.health.curr_Health <= 1f) {
                 if (Player.RigManager.health.curr_Health <= 0f) {
-                Player.RigManager.health.Respawn();
                 NeedsHeal = true;
-                RespawnTime = Time.time;
+                DeathTime = Time.time;
+                Player.RigManager.health.Respawn();
             }
                 else {
                     Player.RigManager.health.curr_Health = 1.1f;
@@ -23,12 +23,13 @@ namespace VitalShift {
         private void RespawnHeal() {
             if (!NeedsHeal) return;
             Ragdoll();
-            if (Time.time - RespawnTime < 1f) return;
+            if (Time.time - DeathTime < 1f) return;
             Player.RigManager.health.curr_Health = 1.1f;
             NeedsHeal = false;
         }
 
         private void Ragdoll() {
+            if (ragdolling) return;
             ragdolling = true;
             ragdollstart = Time.time;
             Player.PhysicsRig.ShutdownRig();
@@ -37,9 +38,21 @@ namespace VitalShift {
 
         private void Unragdoll() {
             if (!ragdolling) return;
-            if (Time.time - ragdollstart < RagdollDurationEntry.Value) {
+            if (Time.time - ragdollstart > RagdollDurationEntry.Value) {
+
+            var feet = Player.PhysicsRig.feet.transform;
+            var knee = Player.PhysicsRig.knee.transform;
+            var pelvis = Player.PhysicsRig.m_pelvis.transform;
+
             Player.PhysicsRig.TurnOnRig();
             Player.PhysicsRig.UnRagdollRig();
+
+            var position = pelvis.position;
+            var rotation = pelvis.rotation;
+
+            knee.SetPositionAndRotation(position, rotation);
+            feet.SetPositionAndRotation(position, rotation);
+            
             ragdolling = false;
             }
         }

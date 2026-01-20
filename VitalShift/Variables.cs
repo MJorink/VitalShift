@@ -10,7 +10,7 @@ namespace VitalShift {
         MelonPreferences_Entry<float> RagdollDurationEntry;
 
         private bool NeedsHeal = false;
-        private float RespawnTime;
+        private float DeathTime;
         private bool ragdolling = false;
         private float ragdollstart;
 
