@@ -58,27 +58,6 @@ namespace VitalShift {
         }        
 
         private void Unragdoll() {
-            if (ragdollingknocked) {
-            if (Time.time - ragdollknockedstart > KnockedDurationEntry.Value) {
-            if (IsDead) return;
-
-            var feet = Player.PhysicsRig.feet.transform;
-            var knee = Player.PhysicsRig.knee.transform;
-            var pelvis = Player.PhysicsRig.m_pelvis.transform;
-
-            Player.PhysicsRig.TurnOnRig();
-            Player.PhysicsRig.UnRagdollRig();
-
-            var position = pelvis.position;
-            var rotation = pelvis.rotation;
-
-            knee.SetPositionAndRotation(position, rotation);
-            feet.SetPositionAndRotation(position, rotation);
-            
-            ragdollingknocked = false;
-            IsKnocked = false;
-            }}
-
             if (ragdollingdead) {
             if (Time.time - ragdolldeadstart > DeadDurationEntry.Value) {
 
@@ -101,6 +80,26 @@ namespace VitalShift {
             IsKnocked = false;
             }}
 
+            if (ragdollingknocked) {
+            if (Time.time - ragdollknockedstart > KnockedDurationEntry.Value) {
+            if (IsDead) return;
+
+            var feet = Player.PhysicsRig.feet.transform;
+            var knee = Player.PhysicsRig.knee.transform;
+            var pelvis = Player.PhysicsRig.m_pelvis.transform;
+
+            Player.PhysicsRig.TurnOnRig();
+            Player.PhysicsRig.UnRagdollRig();
+
+            var position = pelvis.position;
+            var rotation = pelvis.rotation;
+
+            knee.SetPositionAndRotation(position, rotation);
+            feet.SetPositionAndRotation(position, rotation);
+            
+            ragdollingknocked = false;
+            IsKnocked = false;
+            }}
         }
     }
 }
