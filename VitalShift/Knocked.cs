@@ -13,9 +13,9 @@ namespace VitalShift {
             if (IsDead) return;
 
             if (Player.RigManager.health.curr_Health <= 0f) {
-                KnockedTime = Time.time;
-                IsKnocked = true;
                 Player.RigManager.health.Respawn();
+                IsKnocked = true;
+                
             }}    
 
         private void KnockedHandling() {
@@ -25,12 +25,10 @@ namespace VitalShift {
             if (IsDead) {
                 RagdollDead();
             }
-
-            if (Time.time - KnockedTime < 1f) return;
-            Player.RigManager.health.curr_Health = 2.0f;
         }
 
         private void RagdollDead() {
+            // Only once per death
             if (ragdollingdead) return;
             ragdollingdead = true;
             ragdolldeadstart = Time.time;
@@ -40,20 +38,23 @@ namespace VitalShift {
         }
 
         private void RagdollKnocked() {
+            // Repeated check for death during knocked
+            if (Player.RigManager.health.curr_Health <= 0f) {
+                IsDead = true;
+                Player.RigManager.health.Respawn();
+            }
+
+            // Only once per knocked
             if (ragdollingknocked) return;
             ragdollingknocked = true;
             ragdollknockedstart = Time.time;
 
+            Player.RigManager.health.curr_Health = 1.0f;
+            Player.PhysicsRig.RagdollRig(); 
             Player.PhysicsRig.DisableBallLoco();
             Player.PhysicsRig.PhysicalLegs();
             Player.PhysicsRig.legLf.ShutdownLimb();
             Player.PhysicsRig.legRt.ShutdownLimb();
-
-            if (Player.RigManager.health.curr_Health <= 0f) {
-                DeathTime = Time.time;
-                IsDead = true;
-                Player.RigManager.health.Respawn();
-            }
         }        
 
         private void Unragdoll() {

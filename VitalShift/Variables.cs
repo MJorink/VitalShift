@@ -12,8 +12,6 @@ namespace VitalShift {
 
         private bool IsKnocked = false;
         private bool IsDead = false;
-        private float KnockedTime;
-        private float DeathTime;
         private bool ragdollingknocked = false;
         private bool ragdollingdead = false;
         private float ragdollknockedstart;
