@@ -1,5 +1,6 @@
 # VitalShift
 A mod that changes your avatar based on your health, also adds some other features.
+
 Last tested on Melonloader 0.6.5, BoneLab patch 6.
 
 ## Current Features
@@ -9,6 +10,7 @@ Last tested on Melonloader 0.6.5, BoneLab patch 6.
 
 ## Recommended mods
 Avatars with damage states, this is mine: ...link here soon...
+
 Health pickups: https://mod.io/g/bonelab/m/health-pickup
 
 ## Discord Server
