@@ -6,13 +6,18 @@ namespace VitalShift {
 
         MelonPreferences_Category category;
 
-        MelonPreferences_Entry<bool> ImmortalEntry;
-        MelonPreferences_Entry<float> RagdollDurationEntry;
+        MelonPreferences_Entry<bool> KnockedEntry;
+        MelonPreferences_Entry<float> DeadDurationEntry;
+        MelonPreferences_Entry<float> KnockedDurationEntry;
 
-        private bool NeedsHeal = false;
+        private bool IsKnocked = false;
+        private bool IsDead = false;
+        private float KnockedTime;
         private float DeathTime;
-        private bool ragdolling = false;
-        private float ragdollstart;
+        private bool ragdollingknocked = false;
+        private bool ragdollingdead = false;
+        private float ragdollknockedstart;
+        private float ragdolldeadstart;
 
     }
 }

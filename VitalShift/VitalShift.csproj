@@ -526,7 +526,7 @@
 	<ItemGroup>
 		<Compile Include="Setup.cs" />
 		<Compile Include="Variables.cs" />
-		<Compile Include="Immortal.cs" />
+		<Compile Include="Knocked.cs" />
 	</ItemGroup>
 
 	<Target Name="CopyOutput" AfterTargets="Build" Condition="'$(VSBinDir)' != ''">
