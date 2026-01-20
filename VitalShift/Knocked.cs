@@ -29,9 +29,9 @@ namespace VitalShift {
 
         private void RagdollDead() {
             // Only once per death
-            if (ragdollingdead) return;
-            ragdollingdead = true;
-            ragdolldeadstart = Time.time;
+            if (RagdollingDead) return;
+            RagdollingDead = true;
+            RagdollDeadStart = Time.time;
 
             Player.PhysicsRig.ShutdownRig();
             Player.PhysicsRig.RagdollRig(); 
@@ -45,9 +45,9 @@ namespace VitalShift {
             }
 
             // Only once per knocked
-            if (ragdollingknocked) return;
-            ragdollingknocked = true;
-            ragdollknockedstart = Time.time;
+            if (RagdollingKnocked) return;
+            RagdollingKnocked = true;
+            RagdollKnockedStart = Time.time;
 
             Player.RigManager.health.curr_Health = 1.0f;
             Player.PhysicsRig.RagdollRig(); 
@@ -58,8 +58,8 @@ namespace VitalShift {
         }        
 
         private void Unragdoll() {
-            if (ragdollingdead) {
-            if (Time.time - ragdolldeadstart > DeadDurationEntry.Value) {
+            if (RagdollingDead) {
+            if (Time.time - RagdollDeadStart > DeadDurationEntry.Value) {
 
             var feet = Player.PhysicsRig.feet.transform;
             var knee = Player.PhysicsRig.knee.transform;
@@ -74,14 +74,14 @@ namespace VitalShift {
             knee.SetPositionAndRotation(position, rotation);
             feet.SetPositionAndRotation(position, rotation);
             
-            ragdollingdead = false;
-            ragdollingknocked = false;
+            RagdollingDead = false;
+            RagdollingKnocked = false;
             IsDead = false;
             IsKnocked = false;
             }}
 
-            if (ragdollingknocked) {
-            if (Time.time - ragdollknockedstart > KnockedDurationEntry.Value) {
+            if (RagdollingKnocked) {
+            if (Time.time - RagdollKnockedStart > KnockedDurationEntry.Value) {
             if (IsDead) return;
 
             var feet = Player.PhysicsRig.feet.transform;
@@ -97,7 +97,7 @@ namespace VitalShift {
             knee.SetPositionAndRotation(position, rotation);
             feet.SetPositionAndRotation(position, rotation);
             
-            ragdollingknocked = false;
+            RagdollingKnocked = false;
             IsKnocked = false;
             }}
         }

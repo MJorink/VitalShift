@@ -527,6 +527,7 @@
 		<Compile Include="Setup.cs" />
 		<Compile Include="Variables.cs" />
 		<Compile Include="Knocked.cs" />
+		<Compile Include="AvatarChange.cs" />
 	</ItemGroup>
 
 	<Target Name="CopyOutput" AfterTargets="Build" Condition="'$(VSBinDir)' != ''">

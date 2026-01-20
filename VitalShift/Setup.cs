@@ -20,6 +20,10 @@ namespace VitalShift {
             defaultPage.CreateBool("Knocked", Color.yellow, KnockedEntry.Value, (a) => { KnockedEntry.Value = a; });
             defaultPage.CreateFloat("Knocked Duration", Color.yellow, KnockedDurationEntry.Value, 1f, 1f, 10f, (a) => { KnockedDurationEntry.Value = a;});
             defaultPage.CreateFloat("Death Duration", Color.yellow, DeadDurationEntry.Value, 1f, 1f, 10f, (a) => { DeadDurationEntry.Value = a;});
+            defaultPage.CreateFunction("Set High HP Avatar", Color.green, () => { SetAvatarHigh(); });
+            defaultPage.CreateFunction("Set Medium HP Avatar", Color.green, () => { SetAvatarMedium(); });
+            defaultPage.CreateFunction("Set Low HP Avatar", Color.green, () => { SetAvatarLow(); });
+
             defaultPage.CreateFunction("Save Settings", Color.cyan, () => { MelonPreferences.Save(); });                   
         }
 
@@ -28,6 +32,10 @@ namespace VitalShift {
             KnockedEntry = category.CreateEntry("Knocked", false);
             KnockedDurationEntry = category.CreateEntry("Knocked Duration", 5f);
             DeadDurationEntry = category.CreateEntry("Death Duration", 5f);
+            //Set to Ford by default
+            //SavedAvatarHigh = category.CreateEntry("Avatar High", "High");
+            //SavedAvatarMedium = category.CreateEntry("Avatar Medium", "Medium");
+            //SavedAvatarLow = category.CreateEntry("Avatar Low", "Low");
             MelonPreferences.Save();
             category.SaveToFile();
         }
@@ -37,6 +45,7 @@ namespace VitalShift {
             Knocked();
             KnockedHandling();
             Unragdoll();
+            SetAvatar();
         }
     }
 }
