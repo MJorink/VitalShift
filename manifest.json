@@ -1,6 +1,6 @@
 {
     "name": "VitalShift",
-    "version_number": "1.0.0",
+    "version_number": "1.0.1",
     "website_url": "https://github.com/MJorink/VitalShift",
     "description": "Auto change your avatar based on health, allows for visual damage to player.",
     "dependencies": [
