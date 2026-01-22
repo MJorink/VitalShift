@@ -10,7 +10,6 @@ namespace VitalShift {
 
         MelonPreferences_Entry<bool> EnableModEntry;
         MelonPreferences_Entry<bool> KnockedEntry;
-        MelonPreferences_Entry<float> DeadDurationEntry;
         MelonPreferences_Entry<float> KnockedDurationEntry;
 
         MelonPreferences_Entry<string> SavedAvatarHigh;

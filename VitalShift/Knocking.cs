@@ -40,8 +40,8 @@ namespace VitalShift {
         private void RagdollKnocked() {
             // Repeated check for death during knocked
             if (Player.RigManager.health.curr_Health <= 0f) {
+                Player.RigManager.health.Dying(5);
                 IsDead = true;
-                Player.RigManager.health.Respawn();
             }
 
             // Only once per knocked
@@ -59,7 +59,7 @@ namespace VitalShift {
 
         private void Unragdoll() {
             if (RagdollingDead) {
-            if (Time.time - RagdollDeadStart > DeadDurationEntry.Value) {
+            if (Time.time - RagdollDeadStart > 5f) {
 
             var feet = Player.PhysicsRig.feet.transform;
             var knee = Player.PhysicsRig.knee.transform;
@@ -78,6 +78,7 @@ namespace VitalShift {
             RagdollingKnocked = false;
             IsDead = false;
             IsKnocked = false;
+            Player.RigManager.health.Respawn();
             }}
 
             if (RagdollingKnocked) {
@@ -99,7 +100,7 @@ namespace VitalShift {
             
             RagdollingKnocked = false;
             IsKnocked = false;
-            Player.RigManager.health.curr_Health = MediumHealthThreshold;
+            Player.RigManager.health.Respawn();
             }}
         }
     }

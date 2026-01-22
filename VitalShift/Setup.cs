@@ -21,7 +21,6 @@ namespace VitalShift {
             defaultPage.CreateBool("Enable Mod", Color.blue, EnableModEntry.Value, (a) => { EnableModEntry.Value = a; });
             defaultPage.CreateBool("Knocked on Death", Color.cyan, KnockedEntry.Value, (a) => { KnockedEntry.Value = a; });
             defaultPage.CreateFloat("Knocked Duration", Color.yellow, KnockedDurationEntry.Value, 1f, 1f, 10f, (a) => { KnockedDurationEntry.Value = a;});
-            defaultPage.CreateFloat("Death Duration", Color.red, DeadDurationEntry.Value, 1f, 1f, 10f, (a) => { DeadDurationEntry.Value = a;});
             defaultPage.CreateFunction("Set High HP Avatar", Color.green, () => { SetAvatarHigh(); });
             defaultPage.CreateFunction("Set Medium HP Avatar", Color.yellow, () => { SetAvatarMedium(); });
             defaultPage.CreateFunction("Set Low HP Avatar", Color.red, () => { SetAvatarLow(); });
@@ -33,7 +32,6 @@ namespace VitalShift {
             EnableModEntry = category.CreateEntry("Enable Mod", true);
             KnockedEntry = category.CreateEntry("Knocked on Death", false);
             KnockedDurationEntry = category.CreateEntry("Knocked Duration", 5f);
-            DeadDurationEntry = category.CreateEntry("Death Duration", 5f);
 
             SavedAvatarHigh = category.CreateEntry("Avatar High", "SLZ.BONELAB.Content.Avatar.FordBW");
             SavedAvatarMedium = category.CreateEntry("Avatar Medium", "SLZ.BONELAB.Content.Avatar.FordBW");
@@ -53,10 +51,10 @@ namespace VitalShift {
         public override void OnUpdate() {
             base.OnUpdate();
             if (!EnableModEntry.Value) return;
+            SetAvatar();
             Knocked();
             KnockedHandling();
             Unragdoll();
-            SetAvatar();
         }
     }
 }

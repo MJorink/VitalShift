@@ -533,4 +533,5 @@
 	<Target Name="CopyOutput" AfterTargets="Build" Condition="'$(VSBinDir)' != ''">
 		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(VSBinDir)" />
 	</Target>
+	
 </Project>
