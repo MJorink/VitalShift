@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
+		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
 		<RootNamespace>VitalShift</RootNamespace>
@@ -16,505 +16,505 @@
 
 	<ItemGroup>
 		<Reference Include="Assembly-CSharp">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Assembly-CSharp.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Assembly-CSharp.dll</HintPath>
 		</Reference>
 		<Reference Include="BoneLib">
-		  <HintPath>$(VSLibsDir)\Mods\BoneLib.dll</HintPath>
+		  <HintPath>$(LibsDir)\Mods\BoneLib.dll</HintPath>
 		</Reference>
 		<Reference Include="LabFusion">
-		  <HintPath>$(VSLibsDir)\Mods\LabFusion.dll</HintPath>
+		  <HintPath>$(LibsDir)\Mods\LabFusion.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppGoogle.Protobuf">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppGoogle.Protobuf.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppGoogle.Protobuf.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppHBAO.Demo.Runtime">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppHBAO.Demo.Runtime.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppHBAO.Demo.Runtime.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppHBAO.Demo.Universal.Runtime">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppHBAO.Demo.Universal.Runtime.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppHBAO.Demo.Universal.Runtime.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppHBAO.Runtime">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppHBAO.Runtime.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppHBAO.Runtime.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppHBAO.Universal.Runtime">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppHBAO.Universal.Runtime.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppHBAO.Universal.Runtime.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppMeshBakerCore">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMeshBakerCore.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMeshBakerCore.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppMicrosoft.Extensions.Configuration.Abstractions">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.Extensions.Configuration.Abstractions.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.Extensions.Configuration.Abstractions.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppMicrosoft.Extensions.Configuration.Binder">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.Extensions.Configuration.Binder.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.Extensions.Configuration.Binder.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppMicrosoft.Extensions.Configuration">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.Extensions.Configuration.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.Extensions.Configuration.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppMicrosoft.Extensions.DependencyInjection.Abstractions">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppMicrosoft.Extensions.DependencyInjection">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.Extensions.DependencyInjection.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.Extensions.DependencyInjection.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppMicrosoft.Extensions.Logging.Abstractions">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.Extensions.Logging.Abstractions.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.Extensions.Logging.Abstractions.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppMicrosoft.Extensions.Logging.Configuration">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.Extensions.Logging.Configuration.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.Extensions.Logging.Configuration.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppMicrosoft.Extensions.Logging">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.Extensions.Logging.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.Extensions.Logging.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppMicrosoft.Extensions.Options.ConfigurationExtensions">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.Extensions.Options.ConfigurationExtensions.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.Extensions.Options.ConfigurationExtensions.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppMicrosoft.Extensions.Options">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.Extensions.Options.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.Extensions.Options.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppMicrosoft.Extensions.Primitives">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.Extensions.Primitives.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.Extensions.Primitives.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppMicrosoft.MixedReality.OpenXR">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.MixedReality.OpenXR.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMicrosoft.MixedReality.OpenXR.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppMono.Security">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMono.Security.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppMono.Security.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2Cppmscorlib">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2Cppmscorlib.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2Cppmscorlib.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppNavMeshComponents">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppNavMeshComponents.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppNavMeshComponents.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppNewtonsoft.Json">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppNewtonsoft.Json.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppNewtonsoft.Json.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppOccaSoftware.Exposure">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppOccaSoftware.Exposure.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppOccaSoftware.Exposure.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppOculus.Platform">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppOculus.Platform.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppOculus.Platform.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppOculus.VR">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppOculus.VR.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppOculus.VR.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppRayFireAssembly">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppRayFireAssembly.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppRayFireAssembly.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppRootMotion">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppRootMotion.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppRootMotion.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppSLZ.Algorithms">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSLZ.Algorithms.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSLZ.Algorithms.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppSLZ.Algorithms.Unity">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSLZ.Algorithms.Unity.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSLZ.Algorithms.Unity.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppSLZ.Marrow">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSLZ.Marrow.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSLZ.Marrow.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppSLZ.Marrow.VoidLogic.Core">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSLZ.Marrow.VoidLogic.Core.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSLZ.Marrow.VoidLogic.Core.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppSLZ.Marrow.VoidLogic.Engine">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSLZ.Marrow.VoidLogic.Engine.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSLZ.Marrow.VoidLogic.Engine.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppSLZ.ModIO">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSLZ.ModIO.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSLZ.ModIO.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppSLZ.Serialize">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSLZ.Serialize.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSLZ.Serialize.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppSystem.Configuration">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.Configuration.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.Configuration.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppSystem.Core">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.Core.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.Core.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppSystem.Data">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.Data.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.Data.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppSystem">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppSystem.IO.Compression">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.IO.Compression.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.IO.Compression.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppSystem.IO.Compression.FileSystem">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.IO.Compression.FileSystem.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.IO.Compression.FileSystem.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppSystem.Net.Http">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.Net.Http.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.Net.Http.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppSystem.Numerics">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.Numerics.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.Numerics.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppSystem.Runtime.CompilerServices.Unsafe">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.Runtime.CompilerServices.Unsafe.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.Runtime.CompilerServices.Unsafe.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppSystem.Runtime.Serialization">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.Runtime.Serialization.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.Runtime.Serialization.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppSystem.Threading.Channels">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.Threading.Channels.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.Threading.Channels.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppSystem.Xml">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.Xml.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.Xml.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppSystem.Xml.Linq">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.Xml.Linq.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.Xml.Linq.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppUltEvents">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppUltEvents.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppUltEvents.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppUniTask.Addressables">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppUniTask.Addressables.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppUniTask.Addressables.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppUniTask">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppUniTask.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppUniTask.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppUniTask.Linq">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppUniTask.Linq.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppUniTask.Linq.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppURPUnsafe">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppURPUnsafe.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppURPUnsafe.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2Cppwebsocket-sharp">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2Cppwebsocket-sharp.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2Cppwebsocket-sharp.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppWhinarn.UnityMeshSimplifier.Runtime">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppWhinarn.UnityMeshSimplifier.Runtime.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppWhinarn.UnityMeshSimplifier.Runtime.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppZLogger">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppZLogger.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppZLogger.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppZString">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2CppZString.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2CppZString.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2Cpp__Generated">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Il2Cpp__Generated.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Il2Cpp__Generated.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Addressables">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.Addressables.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.Addressables.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Animation.Rigging">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.Animation.Rigging.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.Animation.Rigging.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Barracuda.BurstBLAS">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.Barracuda.BurstBLAS.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.Barracuda.BurstBLAS.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Barracuda">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.Barracuda.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.Barracuda.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Burst">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.Burst.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.Burst.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Burst.Unsafe">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.Burst.Unsafe.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.Burst.Unsafe.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Collections">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.Collections.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.Collections.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.InputSystem">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.InputSystem.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.InputSystem.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Mathematics">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.Mathematics.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.Mathematics.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.ML-Agents.CommunicatorObjects">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.ML-Agents.CommunicatorObjects.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.ML-Agents.CommunicatorObjects.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.ML-Agents">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.ML-Agents.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.ML-Agents.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.ProBuilder">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.ProBuilder.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.ProBuilder.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.ProBuilder.KdTree">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.ProBuilder.KdTree.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.ProBuilder.KdTree.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.ProBuilder.Poly2Tri">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.ProBuilder.Poly2Tri.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.ProBuilder.Poly2Tri.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Profiling.Core">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.Profiling.Core.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.Profiling.Core.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.RenderPipelines.Core.Runtime">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.RenderPipelines.Universal.Runtime">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.RenderPipelines.Universal.StressLevelZero.VRS">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.RenderPipelines.Universal.StressLevelZero.VRS.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.RenderPipelines.Universal.StressLevelZero.VRS.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.ResourceManager">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.ResourceManager.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.ResourceManager.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Splines">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.Splines.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.Splines.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Splines.Examples">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.Splines.Examples.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.Splines.Examples.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.TextMeshPro">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.TextMeshPro.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.TextMeshPro.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Timeline">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.Timeline.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.Timeline.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.XR.ARFoundation">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.ARFoundation.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.ARFoundation.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.XR.ARSubsystems">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.ARSubsystems.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.ARSubsystems.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.XR.CoreUtils">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.CoreUtils.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.CoreUtils.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.XR.Interaction.Toolkit">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.Interaction.Toolkit.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.Interaction.Toolkit.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.XR.Management">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.Management.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.Management.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.XR.MockHMD">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.MockHMD.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.MockHMD.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.XR.Oculus">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.Oculus.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.Oculus.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.XR.OpenXR">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.OpenXR.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.OpenXR.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.XR.OpenXR.Features.ConformanceAutomation">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.OpenXR.Features.ConformanceAutomation.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.OpenXR.Features.ConformanceAutomation.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.XR.OpenXR.Features.MetaQuestSupport">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.OpenXR.Features.MetaQuestSupport.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.OpenXR.Features.MetaQuestSupport.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.XR.OpenXR.Features.MockRuntime">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.OpenXR.Features.MockRuntime.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.OpenXR.Features.MockRuntime.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.XR.OpenXR.Features.RuntimeDebugger">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.OpenXR.Features.RuntimeDebugger.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\Unity.XR.OpenXR.Features.RuntimeDebugger.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.AccessibilityModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.AccessibilityModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.AccessibilityModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.AIModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.AIModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.AIModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.AndroidJNIModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.AndroidJNIModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.AndroidJNIModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.AnimationModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.AnimationModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.AnimationModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.ARModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.ARModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.ARModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.AssetBundleModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.AssetBundleModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.AssetBundleModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.AudioModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.AudioModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.AudioModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.ClothModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.ClothModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.ClothModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.CoreModule">
-		  <HintPath>$(VSLibsDir)\MelonLoader\Dependencies\Il2CppAssemblyGenerator\UnityDependencies\UnityEngine.CoreModule.dll</HintPath>
+		  <HintPath>$(LibsDir)\MelonLoader\Dependencies\Il2CppAssemblyGenerator\UnityDependencies\UnityEngine.CoreModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.CrashReportingModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.CrashReportingModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.CrashReportingModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.DirectorModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.DirectorModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.DirectorModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.DSPGraphModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.DSPGraphModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.DSPGraphModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.GameCenterModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.GameCenterModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.GameCenterModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.GIModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.GIModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.GIModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.GridModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.GridModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.GridModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.HotReloadModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.HotReloadModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.HotReloadModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.ImageConversionModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.ImageConversionModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.ImageConversionModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.IMGUIModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.IMGUIModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.IMGUIModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.InputLegacyModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.InputLegacyModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.InputLegacyModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.InputModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.InputModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.InputModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.JSONSerializeModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.JSONSerializeModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.JSONSerializeModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.LocalizationModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.LocalizationModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.LocalizationModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.ParticleSystemModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.ParticleSystemModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.ParticleSystemModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.PerformanceReportingModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.PerformanceReportingModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.PerformanceReportingModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.Physics2DModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.Physics2DModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.Physics2DModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.PhysicsModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.PhysicsModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.PhysicsModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.ProfilerModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.ProfilerModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.ProfilerModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.ScreenCaptureModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.ScreenCaptureModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.ScreenCaptureModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.SharedInternalsModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.SharedInternalsModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.SharedInternalsModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.SpatialTracking">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.SpriteMaskModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.SpriteMaskModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.SpriteMaskModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.SpriteShapeModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.SpriteShapeModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.SpriteShapeModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.StreamingModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.StreamingModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.StreamingModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.SubstanceModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.SubstanceModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.SubstanceModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.SubsystemsModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.SubsystemsModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.SubsystemsModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.TerrainModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.TerrainModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.TerrainModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.TerrainPhysicsModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.TerrainPhysicsModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.TextCoreFontEngineModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.TextCoreTextEngineModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.TextRenderingModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.TextRenderingModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.TextRenderingModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.TilemapModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.TilemapModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.TilemapModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.TLSModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.TLSModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.TLSModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UI">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UI.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UI.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UIElementsModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UIElementsModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UIElementsModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UIElementsNativeModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UIElementsNativeModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UIElementsNativeModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UIModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UIModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UIModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UmbraModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UmbraModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UmbraModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UNETModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UNETModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UNETModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UnityAnalyticsCommonModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UnityAnalyticsModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityAnalyticsModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UnityConnectModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityConnectModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityConnectModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UnityCurlModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityCurlModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityCurlModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UnityTestProtocolModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityTestProtocolModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UnityWebRequestAudioModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UnityWebRequestModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityWebRequestModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityWebRequestModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UnityWebRequestTextureModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UnityWebRequestWWWModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.VehiclesModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.VehiclesModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.VehiclesModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.VFXModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.VFXModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.VFXModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.VideoModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.VideoModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.VideoModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.VRModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.VRModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.VRModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.WindModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.WindModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.WindModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.XRModule">
-			<HintPath>$(VSLibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.XRModule.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\Il2CppAssemblies\UnityEngine.XRModule.dll</HintPath>
 		</Reference>
 		<Reference Include="MelonLoader">
-			<HintPath>$(VSLibsDir)\MelonLoader\net6\MelonLoader.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\net6\MelonLoader.dll</HintPath>
 		</Reference>
 		<Reference Include="0Harmony">
-			<HintPath>$(VSLibsDir)\MelonLoader\net6\0Harmony.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\net6\0Harmony.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppInterop.Runtime">
-			<HintPath>$(VSLibsDir)\MelonLoader\net6\Il2CppInterop.Runtime.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\net6\Il2CppInterop.Runtime.dll</HintPath>
 		</Reference>
 		<Reference Include="Il2CppInterop.Common">
-			<HintPath>$(VSLibsDir)\MelonLoader\net6\Il2CppInterop.Common.dll</HintPath>
+			<HintPath>$(LibsDir)\MelonLoader\net6\Il2CppInterop.Common.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 
@@ -530,8 +530,8 @@
 		<Compile Include="AvatarChange.cs" />
 	</ItemGroup>
 
-	<Target Name="CopyOutput" AfterTargets="Build" Condition="'$(VSBinDir)' != ''">
-		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(VSBinDir)" />
+	<Target Name="CopyOutput" AfterTargets="Build" Condition="'$(BinDir)' != ''">
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(BinDir)" />
 	</Target>
 	
 </Project>
