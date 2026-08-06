@@ -34,7 +34,6 @@ namespace VitalShift
         private Barcode AvatarHigh;
         private Barcode AvatarMedium;
         private Barcode AvatarLow;
-        private HealthTier CurrentTier;
 
         private static Core Instance;
 
@@ -89,14 +88,20 @@ namespace VitalShift
             AvatarMedium = new Barcode(SavedAvatarMedium.Value);
             AvatarLow = new Barcode(SavedAvatarLow.Value);
 
-            if (!EnableModEntry.Value) { return; }
+            if (!EnableModEntry.Value || Player.RigManager == null) { return; }
 
-            SwapAvatar(HealthTier.High, force: true);
+            if (!IsManagedAvatar(Player.RigManager.AvatarCrate.Barcode)) { return; }
+
+            SwapAvatar(HealthTier.High);
         }
 
         private void RefreshAvatarTier()
         {
             if (!EnableModEntry.Value || Player.RigManager == null) { return; }
+
+            // If the player has manually switched to an avatar that isn't one of the
+            // three configured here, leave it alone until they switch back to one we manage.
+            if (!IsManagedAvatar(Player.RigManager.AvatarCrate.Barcode)) { return; }
 
             var health = Player.RigManager.health;
             float highThreshold = health.max_Health * HighHealthThreshold;
@@ -108,6 +113,11 @@ namespace VitalShift
                 : HealthTier.Low;
 
             SwapAvatar(targetTier);
+        }
+
+        private bool IsManagedAvatar(Barcode avatar)
+        {
+            return avatar == AvatarHigh || avatar == AvatarMedium || avatar == AvatarLow;
         }
 
         [HarmonyPatch(typeof(Il2CppSLZ.Marrow.Player_Health), nameof(Il2CppSLZ.Marrow.Player_Health.UpdateHealth))]
@@ -126,13 +136,13 @@ namespace VitalShift
         {
             if (!EnableModEntry.Value || Player.RigManager == null) { return; }
 
+            if (!IsManagedAvatar(Player.RigManager.AvatarCrate.Barcode)) { return; }
+
             SwapAvatar(HealthTier.High);
         }
 
-        private void SwapAvatar(HealthTier tier, bool force = false)
+        private void SwapAvatar(HealthTier tier)
         {
-            if (!force && tier == CurrentTier) { return; }
-
             Barcode avatar = tier switch
             {
                 HealthTier.High => AvatarHigh,
@@ -141,8 +151,9 @@ namespace VitalShift
                 _ => AvatarHigh
             };
 
+            if (Player.RigManager.AvatarCrate.Barcode == avatar) { return; }
+
             Player.RigManager.SwapAvatarCrate(avatar);
-            CurrentTier = tier;
         }
 
         private void SetAvatar(HealthTier tier)
