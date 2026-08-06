@@ -83,11 +83,11 @@ namespace VitalShift
 
         private void OnLevelLoaded(LevelInfo levelInfo)
         {
-            if (!EnableModEntry.Value) { return; }
-
             AvatarHigh = new Barcode(SavedAvatarHigh.Value);
             AvatarMedium = new Barcode(SavedAvatarMedium.Value);
             AvatarLow = new Barcode(SavedAvatarLow.Value);
+
+            if (!EnableModEntry.Value) { return; }
 
             SwapAvatar(HealthTier.High, force: true);
         }
