@@ -1,3 +1,4 @@
+using HarmonyLib;
 using MelonLoader;
 using BoneLib;
 using BoneLib.BoneMenu;
@@ -35,14 +36,16 @@ namespace VitalShift
         private Barcode AvatarLow;
         private HealthTier CurrentTier;
 
+        private static Core Instance;
+
         public override void OnInitializeMelon()
         {
+            Instance = this;
 			base.OnInitializeMelon();
             SetupMelonPreferences();
             SetupBoneMenu();
 
             Hooking.OnLevelLoaded += OnLevelLoaded;
-            Hooking.OnPlayerDamageReceived += OnPlayerDamageReceived;
             Hooking.OnPlayerResurrected += OnPlayerResurrected;
         }
 
@@ -50,7 +53,6 @@ namespace VitalShift
         {
         	base.OnDeinitializeMelon();
             Hooking.OnLevelLoaded -= OnLevelLoaded;
-            Hooking.OnPlayerDamageReceived -= OnPlayerDamageReceived;
             Hooking.OnPlayerResurrected -= OnPlayerResurrected;
         }
 
@@ -92,7 +94,7 @@ namespace VitalShift
             SwapAvatar(HealthTier.High, force: true);
         }
 
-        private void OnPlayerDamageReceived(Il2CppSLZ.Marrow.RigManager rigManager, float damage)
+        private void RefreshAvatarTier()
         {
             if (!EnableModEntry.Value || Player.RigManager == null) { return; }
 
@@ -106,6 +108,18 @@ namespace VitalShift
                 : HealthTier.Low;
 
             SwapAvatar(targetTier);
+        }
+
+        [HarmonyPatch(typeof(Il2CppSLZ.Marrow.Player_Health), nameof(Il2CppSLZ.Marrow.Player_Health.UpdateHealth))]
+        private static class UpdateHealthPatch
+        {
+            private static void Postfix(Il2CppSLZ.Marrow.Player_Health __instance)
+            {
+                if (Player.RigManager != null && __instance == Player.RigManager.health)
+                {
+                    Instance?.RefreshAvatarTier();
+                }
+            }
         }
 
         private void OnPlayerResurrected(Il2CppSLZ.Marrow.RigManager rigManager)
