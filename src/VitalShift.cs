@@ -1,4 +1,3 @@
-using HarmonyLib;
 using MelonLoader;
 using BoneLib;
 using BoneLib.BoneMenu;
@@ -35,19 +34,14 @@ namespace VitalShift
         private Barcode AvatarMedium;
         private Barcode AvatarLow;
 
-        private static Core Instance;
-
         public override void OnInitializeMelon()
         {
-            Instance = this;
 			base.OnInitializeMelon();
             SetupMelonPreferences();
             SetupBoneMenu();
 
             Hooking.OnLevelLoaded += OnLevelLoaded;
             Hooking.OnPlayerResurrected += OnPlayerResurrected;
-
-            HarmonyInstance.PatchAll();
         }
 
         public override void OnDeinitializeMelon()
@@ -55,8 +49,12 @@ namespace VitalShift
         	base.OnDeinitializeMelon();
             Hooking.OnLevelLoaded -= OnLevelLoaded;
             Hooking.OnPlayerResurrected -= OnPlayerResurrected;
+        }
 
-            HarmonyInstance.UnpatchSelf();
+        public override void OnUpdate()
+        {
+        	base.OnUpdate();
+            RefreshAvatarTier();
         }
 
         private void SetupBoneMenu()
@@ -92,20 +90,18 @@ namespace VitalShift
             AvatarMedium = new Barcode(SavedAvatarMedium.Value);
             AvatarLow = new Barcode(SavedAvatarLow.Value);
 
-            if (!EnableModEntry.Value || Player.RigManager == null) { return; }
+            if (!EnableModEntry.Value || Player.RigManager == null) return;
 
-            if (!IsManagedAvatar(Player.RigManager.AvatarCrate.Barcode)) { return; }
+            if (!IsManagedAvatar(Player.RigManager.AvatarCrate.Barcode)) return;
 
             SwapAvatar(HealthTier.High);
         }
 
         private void RefreshAvatarTier()
         {
-            if (!EnableModEntry.Value || Player.RigManager == null) { return; }
+            if (!EnableModEntry.Value || Player.RigManager == null) return;
 
-            // If the player has manually switched to an avatar that isn't one of the
-            // three configured here, leave it alone until they switch back to one we manage.
-            if (!IsManagedAvatar(Player.RigManager.AvatarCrate.Barcode)) { return; }
+            if (!IsManagedAvatar(Player.RigManager.AvatarCrate.Barcode)) return;
 
             var health = Player.RigManager.health;
             float highThreshold = health.max_Health * HighHealthThreshold;
@@ -124,23 +120,11 @@ namespace VitalShift
             return avatar == AvatarHigh || avatar == AvatarMedium || avatar == AvatarLow;
         }
 
-        [HarmonyPatch(typeof(Il2CppSLZ.Marrow.Player_Health), nameof(Il2CppSLZ.Marrow.Player_Health.UpdateHealth))]
-        private static class UpdateHealthPatch
-        {
-            private static void Postfix(Il2CppSLZ.Marrow.Player_Health __instance)
-            {
-                if (Player.RigManager != null && __instance == Player.RigManager.health)
-                {
-                    Instance?.RefreshAvatarTier();
-                }
-            }
-        }
-
         private void OnPlayerResurrected(Il2CppSLZ.Marrow.RigManager rigManager)
         {
-            if (!EnableModEntry.Value || Player.RigManager == null) { return; }
+            if (!EnableModEntry.Value || Player.RigManager == null) return;
 
-            if (!IsManagedAvatar(Player.RigManager.AvatarCrate.Barcode)) { return; }
+            if (!IsManagedAvatar(Player.RigManager.AvatarCrate.Barcode)) return;
 
             SwapAvatar(HealthTier.High);
         }
@@ -155,14 +139,14 @@ namespace VitalShift
                 _ => AvatarHigh
             };
 
-            if (Player.RigManager.AvatarCrate.Barcode == avatar) { return; }
+            if (Player.RigManager.AvatarCrate.Barcode == avatar) return;
 
             Player.RigManager.SwapAvatarCrate(avatar);
         }
 
         private void SetAvatar(HealthTier tier)
         {
-            if (Player.RigManager == null) { return; }
+            if (Player.RigManager == null) return;
 
             Barcode avatar = Player.RigManager.AvatarCrate.Barcode;
 
