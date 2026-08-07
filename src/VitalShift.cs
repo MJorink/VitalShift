@@ -46,6 +46,8 @@ namespace VitalShift
 
             Hooking.OnLevelLoaded += OnLevelLoaded;
             Hooking.OnPlayerResurrected += OnPlayerResurrected;
+
+            HarmonyInstance.PatchAll();
         }
 
         public override void OnDeinitializeMelon()
@@ -53,6 +55,8 @@ namespace VitalShift
         	base.OnDeinitializeMelon();
             Hooking.OnLevelLoaded -= OnLevelLoaded;
             Hooking.OnPlayerResurrected -= OnPlayerResurrected;
+
+            HarmonyInstance.UnpatchSelf();
         }
 
         private void SetupBoneMenu()
