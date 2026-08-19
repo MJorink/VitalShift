@@ -5,7 +5,7 @@ using BoneLib.Notifications;
 using UnityEngine;
 using Il2CppSLZ.Marrow.Warehouse;
 
-[assembly: MelonInfo(typeof(VitalShift.Core), "VitalShift", "3.0.1", "jorink")]
+[assembly: MelonInfo(typeof(VitalShift.Core), "VitalShift", "3.0.2", "jorink")]
 [assembly: MelonGame("Stress Level Zero", "BONELAB")]
 
 namespace VitalShift
