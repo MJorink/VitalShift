@@ -11,7 +11,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-<Reference Include="BoneLib">
+		<Reference Include="BoneLib">
 		  <HintPath>$(HOME)/repos/BL-Libs/Mods/BoneLib.dll</HintPath>
 		</Reference>
 		<Reference Include="MelonLoader">
@@ -43,5 +43,5 @@
 
 	<Target Name="CopyOutput" AfterTargets="Build" Condition="'$(HOME)/repos/VitalShift/docs/Mods' != ''">
 		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(HOME)/repos/VitalShift/docs/Mods" />
-	</Target>	
+	</Target>
 </Project>
