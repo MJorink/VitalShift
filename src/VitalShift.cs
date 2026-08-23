@@ -20,17 +20,8 @@ namespace VitalShift
             Low
         }
 
-		private const string DefaultAvatarBarcode = "SLZ.BONELAB.Content.Avatar.FordBW";
-        private const float highMultiplier = 0.7f;
-        private const float mediumMultiplier = 0.3f;
-        private static float highThreshold;
-        private static float mediumThreshold;
-        private static float currentHealth;
+        private static RigManager GetRig() => Player.RigManager;
 
-        private static RigManager rig;
-        private static Health health;
-
-        private static MelonPreferences_Category category;
         private static MelonPreferences_Entry<bool> EnableModEntry;
         private static MelonPreferences_Entry<string> SavedAvatarHigh;
         private static MelonPreferences_Entry<string> SavedAvatarMedium;
@@ -45,14 +36,15 @@ namespace VitalShift
         {
             SetupMelonPreferences();
             SetupBoneMenu();
-            SetupHooks();
             SetupAvatars();
         }
 
         private static void SetupMelonPreferences()
         {
+        	MelonPreferences_Category category;
             category = MelonPreferences.CreateCategory("VitalShift");
 
+            const string DefaultAvatarBarcode = "SLZ.BONELAB.Content.Avatar.FordBW";
             EnableModEntry = category.CreateEntry("Enable Mod", true);
             SavedAvatarHigh = category.CreateEntry("Avatar High", DefaultAvatarBarcode);
             SavedAvatarMedium = category.CreateEntry("Avatar Medium", DefaultAvatarBarcode);
@@ -74,11 +66,6 @@ namespace VitalShift
             defaultPage.CreateFunction("Save Settings", Color.cyan, () => { MelonPreferences.Save(); });
         }
 
-        private static void SetupHooks()
-        {
-            Hooking.OnLevelLoaded += OnLevelLoaded;
-        }
-
         private static void SetupAvatars()
         {
         	AvatarHigh = new Barcode(SavedAvatarHigh.Value);
@@ -86,19 +73,14 @@ namespace VitalShift
         	AvatarLow = new Barcode(SavedAvatarLow.Value);
         }
 
-        private static void OnLevelLoaded(LevelInfo levelInfo)
-        {
-        	rig = Player.RigManager;
-        	health = rig.health;
-        }
-
         public override void OnUpdate()
         {
             if (!isModAllowed()) return;
 
-            highThreshold = health.max_Health * highMultiplier;
-            mediumThreshold = health.max_Health * mediumMultiplier;
-            currentHealth = health.curr_Health;
+            Health health = GetRig().health;
+            float currentHealth = health.curr_Health;
+            float highThreshold = health.max_Health * 0.7f;
+            float mediumThreshold = health.max_Health * 0.3f;
 
             HealthTier targetTier = currentHealth > highThreshold ? HealthTier.High
                 : currentHealth > mediumThreshold ? HealthTier.Medium
@@ -109,9 +91,9 @@ namespace VitalShift
 
         private static bool isModAllowed()
         {
-            if (!EnableModEntry.Value || !rig) return false;
+            if (!EnableModEntry.Value || !GetRig()) return false;
             
-            currentAvatar = rig.AvatarCrate.Barcode;
+            currentAvatar = GetRig().AvatarCrate.Barcode;
             return isManagedAvatar(currentAvatar);
         }
 
@@ -131,7 +113,7 @@ namespace VitalShift
             };
 
             if (targetAvatar == currentAvatar) return;
-            rig.SwapAvatarCrate(targetAvatar);
+            GetRig().SwapAvatarCrate(targetAvatar);
         }
 
         private static void SetAvatar(HealthTier tier)
