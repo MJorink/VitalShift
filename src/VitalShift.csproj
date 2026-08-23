@@ -2,16 +2,12 @@
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
+		<GenerateAssemblyInfo>False</GenerateAssemblyInfo>
 		<Nullable>disable</Nullable>
-		<RootNamespace>VitalShift</RootNamespace>
-		<LangVersion>default</LangVersion>
-		<IsPackable>false</IsPackable>
-		<AssemblyVersion>1.0.0.0</AssemblyVersion>
-		<FileVersion>1.0.0.0</FileVersion>
-		<NeutralLanguage>en-US</NeutralLanguage>
-		<AssemblyName>VitalShift</AssemblyName>
-		<LangVersion>latest</LangVersion>
-		<ImplicitUsings>enable</ImplicitUsings>
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+		<AssemblyTitle>VitalShift</AssemblyTitle>
+		<Product>VitalShift</Product>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -39,16 +35,8 @@
 		<Reference Include="Il2CppInterop.Runtime">
 		  <HintPath>$(HOME)/repos/BL-Libs/PC/MelonLoader/net6/Il2CppInterop.Runtime.dll</HintPath>
 		</Reference>
-		<Reference Include="0Harmony">
-		  <HintPath>$(HOME)/repos/BL-Libs/PC/MelonLoader/net6/0Harmony.dll</HintPath>
-		</Reference>
 	</ItemGroup>
-
-	<PropertyGroup>
-		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-	</PropertyGroup>
-
+	
 	<ItemGroup>
 		<Compile Include="VitalShift.cs" />
 	</ItemGroup>
