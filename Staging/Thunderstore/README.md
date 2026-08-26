@@ -1,5 +1,5 @@
 # VitalShift
-A BoneLab mod that swaps your avatar based on your health, allowing for visual damage with avatar variants. <br>
+A BoneLab mod that swaps your avatar based on your health. <br>
 Last tested on `Patch 6` <br>
 
 ## Settings

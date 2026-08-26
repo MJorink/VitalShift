@@ -1,9 +1,0 @@
-{
-    "name": "VitalShift",
-    "version_number": "3.0.3",
-    "website_url": "https://github.com/MJorink/VitalShift",
-    "description": "A BoneLab mod that swaps your avatar based on your health, allowing for visual damage with avatar variants.",
-    "dependencies": [
-        "bonelib-BoneLib-3.2.2"
-    ]
-}

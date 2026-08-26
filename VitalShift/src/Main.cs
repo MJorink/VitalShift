@@ -6,13 +6,14 @@ using UnityEngine;
 using Il2CppSLZ.Marrow;
 using Il2CppSLZ.Marrow.Warehouse;
 
-[assembly: MelonInfo(typeof(VitalShift.Core), "VitalShift", "3.0.3", "jorink")]
-[assembly: MelonGame("Stress Level Zero", "BONELAB")]
-
 namespace VitalShift
 {
-    public class Core : MelonMod
+    public class VitalShiftMod : MelonMod
     {
+    	public const string Title = "VitalShift";
+    	public const string Description = "A BoneLab mod that swaps your avatar based on your health.";
+    	public const string Version = "3.2.0";
+
         private enum HealthTier
         {
             High,
@@ -20,9 +21,7 @@ namespace VitalShift
             Low
         }
 
-        private static RigManager GetRig() => Player.RigManager;
-
-        private static MelonPreferences_Entry<bool> EnableModEntry;
+        private static MelonPreferences_Entry<bool> enableMod;
         private static MelonPreferences_Entry<string> SavedAvatarHigh;
         private static MelonPreferences_Entry<string> SavedAvatarMedium;
         private static MelonPreferences_Entry<string> SavedAvatarLow;
@@ -32,20 +31,23 @@ namespace VitalShift
         private static Barcode AvatarLow;
         private static Barcode currentAvatar;
 
+        private static RigManager rig;
+
         public override void OnInitializeMelon()
         {
             SetupMelonPreferences();
             SetupBoneMenu();
-            SetupAvatars();
+            SetupHooks();
         }
 
         private static void SetupMelonPreferences()
         {
+        	const string DefaultAvatarBarcode = "SLZ.BONELAB.Content.Avatar.FordBW";
+        	
         	MelonPreferences_Category category;
             category = MelonPreferences.CreateCategory("VitalShift");
-
-            const string DefaultAvatarBarcode = "SLZ.BONELAB.Content.Avatar.FordBW";
-            EnableModEntry = category.CreateEntry("Enable Mod", true);
+            
+            enableMod = category.CreateEntry("Enable Mod", true);
             SavedAvatarHigh = category.CreateEntry("Avatar High", DefaultAvatarBarcode);
             SavedAvatarMedium = category.CreateEntry("Avatar Medium", DefaultAvatarBarcode);
             SavedAvatarLow = category.CreateEntry("Avatar Low", DefaultAvatarBarcode);
@@ -58,16 +60,23 @@ namespace VitalShift
         {
             Page defaultPage = Page.Root.CreatePage("Jorink", Color.red).CreatePage("VitalShift", Color.red);
 
-            defaultPage.CreateBool("Enable Mod", Color.blue, EnableModEntry.Value, (a) => { EnableModEntry.Value = a; });
+            defaultPage.CreateBool("Enable Mod", Color.blue, enableMod.Value, (a) => { enableMod.Value = a; });
             defaultPage.CreateFunction("Set High HP Avatar", Color.green, () => { SetAvatar(HealthTier.High); });
             defaultPage.CreateFunction("Set Medium HP Avatar", Color.yellow, () => { SetAvatar(HealthTier.Medium); });
             defaultPage.CreateFunction("Set Low HP Avatar", Color.red, () => { SetAvatar(HealthTier.Low); });
-
             defaultPage.CreateFunction("Save Settings", Color.cyan, () => { MelonPreferences.Save(); });
         }
 
-        private static void SetupAvatars()
+        private static void SetupHooks()
         {
+        	Hooking.OnLevelLoaded += OnLevelLoaded;
+        }
+
+        private static void OnLevelLoaded(LevelInfo levelInfo)
+        {
+        	rig = Player.RigManager;
+        	currentAvatar = rig.AvatarCrate.Barcode;
+        	
         	AvatarHigh = new Barcode(SavedAvatarHigh.Value);
         	AvatarMedium = new Barcode(SavedAvatarMedium.Value);
         	AvatarLow = new Barcode(SavedAvatarLow.Value);
@@ -77,7 +86,7 @@ namespace VitalShift
         {
             if (!isModAllowed()) return;
 
-            Health health = GetRig().health;
+            Health health = rig.health;
             float currentHealth = health.curr_Health;
             float highThreshold = health.max_Health * 0.7f;
             float mediumThreshold = health.max_Health * 0.3f;
@@ -91,9 +100,7 @@ namespace VitalShift
 
         private static bool isModAllowed()
         {
-            if (!EnableModEntry.Value || !GetRig()) return false;
-            
-            currentAvatar = GetRig().AvatarCrate.Barcode;
+            if (!enableMod.Value || !rig) return false;
             return isManagedAvatar(currentAvatar);
         }
 
@@ -113,7 +120,7 @@ namespace VitalShift
             };
 
             if (targetAvatar == currentAvatar) return;
-            GetRig().SwapAvatarCrate(targetAvatar);
+            rig.SwapAvatarCrate(targetAvatar);
         }
 
         private static void SetAvatar(HealthTier tier)
@@ -142,15 +149,15 @@ namespace VitalShift
 
             savedEntry.Value = currentAvatar.ToString();
 
-            var notif = new Notification
+            var confirmation = new Notification
             {
                 Title = $"{tierLabel} tier set to:",
                 Message = currentAvatar.ID,
                 Type = NotificationType.Success,
-                PopupLength = 0.75f,
+                PopupLength = 1.00f,
                 ShowTitleOnPopup = true
             };
-            Notifier.Send(notif);
+            Notifier.Send(confirmation);
         }
     }
 }
