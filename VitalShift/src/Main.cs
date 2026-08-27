@@ -44,8 +44,7 @@ namespace VitalShift
         {
         	const string DefaultAvatarBarcode = "SLZ.BONELAB.Content.Avatar.FordBW";
         	
-        	MelonPreferences_Category category;
-            category = MelonPreferences.CreateCategory("VitalShift");
+            var category = MelonPreferences.CreateCategory("VitalShift");
             
             enableMod = category.CreateEntry("Enable Mod", true);
             SavedAvatarHigh = category.CreateEntry("Avatar High", DefaultAvatarBarcode);
@@ -53,7 +52,6 @@ namespace VitalShift
             SavedAvatarLow = category.CreateEntry("Avatar Low", DefaultAvatarBarcode);
 
             MelonPreferences.Save();
-            category.SaveToFile();
         }
         
         private static void SetupBoneMenu()
