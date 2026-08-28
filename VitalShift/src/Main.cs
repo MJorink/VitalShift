@@ -58,11 +58,11 @@ namespace VitalShift
         {
             Page defaultPage = Page.Root.CreatePage("Jorink", Color.red).CreatePage("VitalShift", Color.red);
 
-            defaultPage.CreateBool("Enable Mod", Color.blue, enableMod.Value, (a) => { enableMod.Value = a; });
+            defaultPage.CreateBool("Enable Mod", Color.green, enableMod.Value, (a) => { enableMod.Value = a; });
             defaultPage.CreateFunction("Set High HP Avatar", Color.green, () => { SetAvatar(HealthTier.High); });
             defaultPage.CreateFunction("Set Medium HP Avatar", Color.yellow, () => { SetAvatar(HealthTier.Medium); });
             defaultPage.CreateFunction("Set Low HP Avatar", Color.red, () => { SetAvatar(HealthTier.Low); });
-            defaultPage.CreateFunction("Save Settings", Color.cyan, () => { MelonPreferences.Save(); });
+            defaultPage.CreateFunction("Save Settings", Color.green, () => { MelonPreferences.Save(); });
         }
 
         private static void SetupHooks()
