@@ -73,11 +73,18 @@ namespace VitalShift
         private static void OnLevelLoaded(LevelInfo levelInfo)
         {
         	rig = Player.RigManager;
-        	currentAvatar = rig.AvatarCrate.Barcode;
         	
         	AvatarHigh = new Barcode(SavedAvatarHigh.Value);
         	AvatarMedium = new Barcode(SavedAvatarMedium.Value);
         	AvatarLow = new Barcode(SavedAvatarLow.Value);
+        }
+
+        private static bool isModAllowed()
+        {
+            if (!enableMod.Value || !rig) return false;
+            
+            currentAvatar = rig.AvatarCrate.Barcode;
+            return currentAvatar == AvatarHigh || currentAvatar == AvatarMedium || currentAvatar == AvatarLow;
         }
 
         public override void OnUpdate()
@@ -94,17 +101,6 @@ namespace VitalShift
                 : HealthTier.Low;
 
             SwapAvatar(targetTier);
-        }
-
-        private static bool isModAllowed()
-        {
-            if (!enableMod.Value || !rig) return false;
-            return isManagedAvatar(currentAvatar);
-        }
-
-        private static bool isManagedAvatar(Barcode avatar)
-        {
-            return avatar == AvatarHigh || avatar == AvatarMedium || avatar == AvatarLow;
         }
 
         private static void SwapAvatar(HealthTier tier)
