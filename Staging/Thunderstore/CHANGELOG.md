@@ -1,5 +1,5 @@
 **v3.1.0**
-- Code Refresh
+- Rewrite using JLib
 
 **v3.0.2**
 - Fixed Mods folder having no dll, while I zipped the mod I forgot the recursive flag.

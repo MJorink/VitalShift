@@ -1,5 +1,5 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("VitalShift") = "VitalShift", "VitalShift/VitalShift.csproj", "VitalShift"
+Project("VitalShift") = "VitalShift", "Mod/VitalShift.csproj", "VitalShift"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
