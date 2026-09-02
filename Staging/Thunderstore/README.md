@@ -1,5 +1,5 @@
 # VitalShift
-A BoneLab mod that swaps your avatar based on your health. <br>
+A BONELAB mod that swaps your avatar based on your health.
 
 ## Discord Server
 Join the Discord server to chat, give suggestions, report issues, and get sneak peeks! <br>

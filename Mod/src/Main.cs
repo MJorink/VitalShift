@@ -9,7 +9,7 @@ namespace vitalshift
 {
 	public class VitalShift : MelonMod
 	{
-		public const string Version = "3.1.0";
+		public const string Version = "4.0.0";
 
 		private const string DefaultAvatar = "SLZ.BONELAB.Content.Avatar.FordBW";
 		private readonly string[] tiers = { "High", "Medium", "Low" };
